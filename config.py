@@ -10,7 +10,7 @@ KEY_XPATH = './div[1]//p//text()'
 VALUE_XPATH = './div[2]//p//text()'
 
 # Пути до названия контейнера с данными о компании относительно самого контейнера
-TITLES = ['./h5//text()', '/h4//text()']
+TITLES = ['./h5//text()', './h4//text()']
 
 # Значения которые надо менять на null
 CONVERT_TO_NULL = ['', 'Not Applic', 'Not Available']
