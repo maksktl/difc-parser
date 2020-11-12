@@ -16,7 +16,7 @@ TITLES = ['./h5//text()', '/h4//text()']
 CONVERT_TO_NULL = ['', 'Not Applic', 'Not Available']
 
 # Сколько максимум компаний нужно спарсить
-TOTAL = 10
+TOTAL = 1000
 
 # MongoDB settings
 USER = 'user'
