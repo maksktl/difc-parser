@@ -1,9 +1,9 @@
+from scrapy.exceptions import CloseSpider
 from scrapy.spiders import SitemapSpider
 
 from config import FIELDS_XPATH, KEY_XPATH, VALUE_XPATH, TITLES, INFORMATION_XPATH, COMPANY_OVERVIEW_XPATH, \
     CONVERT_TO_NULL, TOTAL
 from items import CompanyItem
-from scrapy.exceptions import CloseSpider
 from utils.content_getter import ContentGetter
 
 
@@ -51,5 +51,3 @@ class CompaniesSpider(SitemapSpider):
         # Set id
         item['_id'] = item['company_overview']['registered_number']
         yield item
-
-

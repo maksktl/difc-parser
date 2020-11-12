@@ -5,8 +5,8 @@
 
 
 # useful for handling different item types with a single interface
-from itemadapter import ItemAdapter
 from pymongo import MongoClient
+from pymongo.errors import DuplicateKeyError
 
 from config import COLLECTION_NAME, PASSWORD, USER, HOST, DB_NAME
 
@@ -19,5 +19,8 @@ class DifcScraperPipeline:
         self.collection = db[COLLECTION_NAME]
 
     def process_item(self, item, spider):
-        self.collection.insert(dict(item))
+        try:
+            self.collection.insert(dict(item))
+        except DuplicateKeyError:
+            return item
         return item
